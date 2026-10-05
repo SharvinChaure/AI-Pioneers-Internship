@@ -4,9 +4,9 @@ This repository contains my work for the 4-week AI/ML internship program. Each w
 
 | Week | Task | Folder | Status |
 |---|---|---|---|
-| 1 | [Week 1 | [`week1/`](./week1) | Completed |
-| 2 | [Week 2  | [`week2/`](./week2) | Completed |
-| 3 | [Week 3 ] | [`week3/`](./week3) | Completed |
+| 1 | [Week 1 | [`week1/`](./Week1) | Completed |
+| 2 | [Week 2  | [`week2/`](./Week 2) | Completed |
+| 3 | [Week 3 ] | [`week3/`](./Week 3) | Completed |
 | 4 | AI Project Deployment & Capstone | [`week4/`](./week4) | Completed |
 
 ## Repository structure

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Breast Cancer Diagnosis Predictor</title>
+<style>
+body{font-family:system-ui,Arial,sans-serif;margin:0;background:#f4f6fb;color:#1e293b}
+header{background:#1d4ed8;color:#fff;padding:20px 32px}
+main{max-width:980px;margin:24px auto;padding:0 16px}
+.card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 1px 4px #0002;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+label{font-size:12px;display:block;margin-bottom:2px}
+input{width:100%;padding:6px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box}
+button{background:#ea580c;color:#fff;border:0;padding:10px 20px;border-radius:8px;font-size:15px;cursor:pointer;margin-right:8px}
+button.secondary{background:#475569}
+#result{font-size:18px;font-weight:600}.ok{color:#15803d}.bad{color:#b91c1c}
+small{color:#64748b}
+</style></head><body>
+<header><h1 style="margin:0">Breast Cancer Diagnosis Predictor</h1>
+<small style="color:#dbeafe">Model: {{ metrics.model }} &middot; Test accuracy {{ '%.1f' % (metrics.accuracy*100) }}% &middot; ROC-AUC {{ '%.3f' % metrics.roc_auc }}</small></header>
+<main>
+<div class="card"><b>Educational demo only</b> &mdash; not a medical device. Enter the 30 cell-nucleus measurements, or load a sample.
+<div style="margin-top:12px"><button class="secondary" onclick="fill(true)">Load average values</button></div></div>
+<div class="card"><div class="grid">
+{% for f in features %}<div><label for="{{f}}">{{f}}</label>
+<input id="{{f}}" type="number" step="any" min="0" value="{{ '%.4f' % ranges[f][2] }}"></div>{% endfor %}
+</div><br><button onclick="predict()">Predict</button><div id="result" style="margin-top:14px"></div></div>
+</main>
+<script>
+const FEATURES={{ features|tojson }}, RANGES={{ ranges|tojson }};
+function fill(){FEATURES.forEach(f=>document.getElementById(f).value=RANGES[f][2].toFixed(4));}
+async function predict(){
+  const body={};FEATURES.forEach(f=>body[f]=document.getElementById(f).value);
+  const r=await fetch('/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const d=await r.json(),el=document.getElementById('result');
+  if(!r.ok){el.className='bad';el.textContent='Error: '+d.error;return;}
+  el.className=d.prediction==='benign'?'ok':'bad';
+  el.textContent=`Prediction: ${d.prediction.toUpperCase()} (confidence ${(d.confidence*100).toFixed(1)}%)`;
+}
+</script></body></html>

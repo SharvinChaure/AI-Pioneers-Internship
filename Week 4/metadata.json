@@ -1,0 +1,217 @@
+{
+  "features": [
+    "mean radius",
+    "mean texture",
+    "mean perimeter",
+    "mean area",
+    "mean smoothness",
+    "mean compactness",
+    "mean concavity",
+    "mean concave points",
+    "mean symmetry",
+    "mean fractal dimension",
+    "radius error",
+    "texture error",
+    "perimeter error",
+    "area error",
+    "smoothness error",
+    "compactness error",
+    "concavity error",
+    "concave points error",
+    "symmetry error",
+    "fractal dimension error",
+    "worst radius",
+    "worst texture",
+    "worst perimeter",
+    "worst area",
+    "worst smoothness",
+    "worst compactness",
+    "worst concavity",
+    "worst concave points",
+    "worst symmetry",
+    "worst fractal dimension"
+  ],
+  "target_names": [
+    "malignant",
+    "benign"
+  ],
+  "feature_ranges": {
+    "mean radius": [
+      6.981,
+      28.11,
+      14.127291739894552
+    ],
+    "mean texture": [
+      9.71,
+      39.28,
+      19.289648506151142
+    ],
+    "mean perimeter": [
+      43.79,
+      188.5,
+      91.96903339191564
+    ],
+    "mean area": [
+      143.5,
+      2501.0,
+      654.8891036906855
+    ],
+    "mean smoothness": [
+      0.05263,
+      0.1634,
+      0.0963602811950791
+    ],
+    "mean compactness": [
+      0.01938,
+      0.3454,
+      0.10434098418277679
+    ],
+    "mean concavity": [
+      0.0,
+      0.4268,
+      0.0887993158172232
+    ],
+    "mean concave points": [
+      0.0,
+      0.2012,
+      0.04891914586994728
+    ],
+    "mean symmetry": [
+      0.106,
+      0.304,
+      0.18116186291739894
+    ],
+    "mean fractal dimension": [
+      0.04996,
+      0.09744,
+      0.06279760984182776
+    ],
+    "radius error": [
+      0.1115,
+      2.873,
+      0.40517205623901575
+    ],
+    "texture error": [
+      0.3602,
+      4.885,
+      1.2168534270650264
+    ],
+    "perimeter error": [
+      0.757,
+      21.98,
+      2.8660592267135327
+    ],
+    "area error": [
+      6.802,
+      542.2,
+      40.337079086116
+    ],
+    "smoothness error": [
+      0.001713,
+      0.03113,
+      0.007040978910369069
+    ],
+    "compactness error": [
+      0.002252,
+      0.1354,
+      0.025478138840070295
+    ],
+    "concavity error": [
+      0.0,
+      0.396,
+      0.03189371634446397
+    ],
+    "concave points error": [
+      0.0,
+      0.05279,
+      0.011796137082601054
+    ],
+    "symmetry error": [
+      0.007882,
+      0.07895,
+      0.02054229876977153
+    ],
+    "fractal dimension error": [
+      0.0008948,
+      0.02984,
+      0.0037949038664323374
+    ],
+    "worst radius": [
+      7.93,
+      36.04,
+      16.269189806678387
+    ],
+    "worst texture": [
+      12.02,
+      49.54,
+      25.677223198594024
+    ],
+    "worst perimeter": [
+      50.41,
+      251.2,
+      107.26121265377857
+    ],
+    "worst area": [
+      185.2,
+      4254.0,
+      880.5831282952548
+    ],
+    "worst smoothness": [
+      0.07117,
+      0.2226,
+      0.13236859402460457
+    ],
+    "worst compactness": [
+      0.02729,
+      1.058,
+      0.25426504393673116
+    ],
+    "worst concavity": [
+      0.0,
+      1.252,
+      0.27218848330404216
+    ],
+    "worst concave points": [
+      0.0,
+      0.291,
+      0.11460622319859401
+    ],
+    "worst symmetry": [
+      0.1565,
+      0.6638,
+      0.2900755711775044
+    ],
+    "worst fractal dimension": [
+      0.05504,
+      0.2075,
+      0.0839458172231986
+    ]
+  },
+  "metrics": {
+    "model": "Logistic Regression",
+    "best_params": {
+      "clf__C": 0.1
+    },
+    "accuracy": 0.9736842105263158,
+    "precision": 0.9726027397260274,
+    "recall": 0.9861111111111112,
+    "f1": 0.9793103448275862,
+    "roc_auc": 0.9957010582010581,
+    "cv_results": {
+      "Logistic Regression": {
+        "cv_mean": 0.9802197802197803,
+        "cv_std": 0.012815278889769896
+      },
+      "Random Forest": {
+        "cv_mean": 0.9582417582417582,
+        "cv_std": 0.016150481820548422
+      },
+      "SVM (RBF)": {
+        "cv_mean": 0.9714285714285715,
+        "cv_std": 0.017855029460738386
+      }
+    },
+    "n_train": 455,
+    "n_test": 114
+  }
+}
